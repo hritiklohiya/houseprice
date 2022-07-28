@@ -18,12 +18,12 @@ def predict():
     '''
     For rendering results on HTML GUI
     '''
-    exp = float(request.args.get('exp'))
+    SqFt = float(request.args.get('SqFt'))
     
-    prediction = model.predict([[exp]])
+    prediction = model.predict([[SqFt]])
     
         
-    return render_template('index.html', prediction_text='Regression Model  has predicted salary for given experinace is : {}'.format(prediction))
+    return render_template('index.html', prediction_text='Regression Model  has predicted price for given SqFt area is : {}'.format(prediction))
 
 if __name__ == "__main__":
     app.run(debug = True)
